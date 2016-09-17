@@ -12,6 +12,7 @@
 
 	 //your morality 0-100. <33 is evil, >33 and <66 is neutral, >66 is good.
 	 var morality:Int = 50;
+	 var canMove:Bool = true;
 
 	 var speed:Float = 200;
 	 var _rot: Float = 0;
@@ -34,12 +35,20 @@
 	 
 	 override public function update(elapsed:Float):Void
 	 {
-		 movement();
+		 if(canMove == true){ //this will be set false when talking to someone, or during cutscenes etc
+		 	movement();
+		 }
+		 //if overlapped with an interaction zone, check if Space is pressed and then interact
+		 //use if(overlaps(object, false) && FlxG.keys.anyPressed([F, SPACEBAR])){run interact script } might be SPACE or SPACEBAR. 
+		 //could even run overlapPoint(point, false) here if we dont need a large hitbox
+		 //these scripts should probably be on the object instead and check if the player is overlapping them. Easier than having the player check every point in the world when you hit F
+		 //Then they can run their own unique interact scripts that they have attached. 
+		 //For entering building, simply move the player somewhere else on the map where the indoors sprite is so we dont have to load a new scene
 		 super.update(elapsed);
 	 }
 
 	 public function changeMorality(difference:Int):Void
-	 {
+	 { //morality scale for different endings. Between 0-100, cutoffs at 33, 66. low is evil, mid neutral, high good
 		 morality += difference;
 		 if(morality < 0){
 			 morality = 0;

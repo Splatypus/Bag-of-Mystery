@@ -13,7 +13,10 @@ class MenuState extends FlxState
 	
 	override public function create():Void
 	{
-		// add(new FlxText(10,10,20, "Hello, world!"));
+		//load background graphic here
+		var background = new FlxSprite();
+		background.loadGraphic("assets/titlecard.png");
+		add(background);
 		_playButton  = new FlxButton(0,0, "Play", clickPlay);
 		_playButton.screenCenter();
 		add(_playButton);
