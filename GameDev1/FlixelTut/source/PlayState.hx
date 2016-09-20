@@ -14,10 +14,10 @@ class PlayState extends FlxState
 	override public function create():Void
 	{
 		//music
-		FlxG.sound.playMusic(/*music path*/, 1, true);
+		//FlxG.sound.playMusic(/*music path*/, 1, true);
 		//instantiate the player
 		_player = new Player(20,20);
-		_player.allowCollisions = ANY;
+		//_player.allowCollisions = ANY;
 		add(_player);
 		//set camera to center on the player
 		FlxG.camera.follow(_player);

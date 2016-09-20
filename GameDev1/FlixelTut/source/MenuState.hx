@@ -10,12 +10,16 @@ import flixel.math.FlxMath;
 class MenuState extends FlxState
 {
 	var _playButton:FlxButton;
+	var background:FlxSprite;
 	
 	override public function create():Void
 	{
 		//load background graphic here
-		var background = new FlxSprite();
-		background.loadGraphic("assets/titlecard.png");
+		background = new FlxSprite(0,0);
+
+		background.loadGraphic("assets/images/titlecard.png", false, 2100, 1500);
+		background.setGraphicSize(FlxG.width , FlxG.height);
+		background.screenCenter();
 		add(background);
 		_playButton  = new FlxButton(0,0, "Play", clickPlay);
 		_playButton.screenCenter();

@@ -25,11 +25,16 @@
      {
          super(X, Y);
 		 //makeGraphic(16,16, FlxColor.GREEN);
-		 loadGraphic("assets/images/duck.png", true, 100, 114);
+		 loadGraphic("assets/images/rat sheet.png", true, 60, 60);
 		 // setFacingFlip(direction, flipx, flipy)
-		 setFacingFlip(FlxObject.LEFT, true, false);
-		 setFacingFlip(FlxObject.RIGHT, false, false);
-		 animation.add("walk", [0,1,0,2], 5, true);
+		 setFacingFlip(FlxObject.LEFT, false, false);
+		 setFacingFlip(FlxObject.RIGHT, true, false);
+		 animation.add("walk", [1,2,3,4,5,6], 5, true);
+		 animation.add("idle", [0], 1, true);
+		 animation.add("down", [7,8,7,9], 5, true);
+		 animation.add("up", [10,11,10,12], 5, true);
+		 animation.add("downidle", [7], 1, true);
+		 animation.add("upidle", [10], 1, true);
 		 drag.x = drag.y = 1600;
      }
 	 
@@ -83,6 +88,7 @@
 			 {
 				 _rot = 180;
 				 facing = FlxObject.LEFT;
+				 animation.play("walk");
 				 if (_up) _rot += 45;
 				 else if (_down) _rot -= 45;
 			 }
@@ -90,18 +96,28 @@
 			 {
 				 _rot = 0;
 				 facing = FlxObject.RIGHT;
+				 animation.play("walk");
 				 if (_up) _rot -= 45;
 				 else if (_down) _rot += 45;
 			 }
-			 else if (_down) _rot = 90;
-			 else if (_up) _rot = 270;
+			 else if (_down) {
+				 _rot = 90;
+				 animation.play("down");
+			 }
+			 else if (_up) {
+				 _rot = 270;
+				 animation.play("up");
+			 }
 			 
 		 	velocity.set(speed,0);
 			velocity.rotate(new FlxPoint(0,0), _rot);
 		 }
-		 if (velocity.x != 0 || velocity.y != 0){
-			 animation.play("walk");
+		 else if (_rot == 90){
+			animation.play("downidle");
+		 } else if (_rot == 270){
+			 animation.play("upidle");
+		 } else {
+			 animation.play("idle");
 		 }
-		 else animation.stop();
 	 }
  }
