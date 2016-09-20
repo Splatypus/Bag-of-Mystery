@@ -6,6 +6,7 @@
  import flixel.FlxG;
  import flixel.math.FlxPoint;
  import flixel.FlxObject;
+ import flixel.system.FlxSound;
 
  class Player extends FlxSprite
  {
@@ -21,9 +22,16 @@
 	 var _down:Bool = false;
 	 var _left:Bool = false;
 	 var _right:Bool = false;
+
+	 var stepSound:FlxSound;
+	 var doorSound:FlxSound;
+
      public function new(?X:Float=0, ?Y:Float=0)
      {
          super(X, Y);
+		 //load sounds
+		 stepSound = FlxG.sound.load("assets/sounds/Footstep.wav");
+		 doorSound = FlxG.sound.load("assets/sounds/Door.wav");
 		 //makeGraphic(16,16, FlxColor.GREEN);
 		 loadGraphic("assets/images/rat sheet.png", true, 60, 60);
 		 // setFacingFlip(direction, flipx, flipy)
@@ -84,6 +92,7 @@
 		 }
 		 
 		 if (_up || _down || _left || _right){
+			 stepSound.play();
 			 if (_left)
 			 {
 				 _rot = 180;

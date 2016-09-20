@@ -14,7 +14,7 @@ class PlayState extends FlxState
 	override public function create():Void
 	{
 		//music
-		//FlxG.sound.playMusic(/*music path*/, 1, true);
+		FlxG.sound.playMusic("assets/music/Music.wav", 1, true);
 		//instantiate the player
 		_player = new Player(20,20);
 		//_player.allowCollisions = ANY;
