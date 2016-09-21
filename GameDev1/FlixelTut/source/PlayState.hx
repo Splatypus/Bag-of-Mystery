@@ -75,13 +75,13 @@ class PlayState extends FlxState
 		house1 = new FlxSprite(460,975, "assets/images/woodpecker house.png");
 		house1.immovable = true;
 
-		house2 = new FlxSprite(825,475, "assets/images/giraffe house.png");
+		house2 = new FlxSprite(825,475, "assets/images/house.png");
 		house2.immovable = true;
 
-		house3 = new FlxSprite(1450,1100, "assets/images/giraffe house.png");
+		house3 = new FlxSprite(1450,1100, "assets/images/house.png");
 		house3.immovable = true;
 
-		house4 = new FlxSprite(1900,475, "assets/images/giraffe house.png");
+		house4 = new FlxSprite(1900,475, "assets/images/house.png");
 		house4.immovable = true;
 
 		house5 = new FlxSprite(1350,560, "assets/images/giraffe house.png");

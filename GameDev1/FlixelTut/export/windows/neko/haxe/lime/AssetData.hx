@@ -16,10 +16,14 @@ class AssetData {
 		
 		if (!initialized) {
 			
+			path.set ("assets/data/8-BIT WONDER.TTF", "assets/data/8-BIT WONDER.TTF");
+			type.set ("assets/data/8-BIT WONDER.TTF", Reflect.field (AssetType, "font".toUpperCase ()));
 			path.set ("assets/data/data-goes-here.txt", "assets/data/data-goes-here.txt");
 			type.set ("assets/data/data-goes-here.txt", Reflect.field (AssetType, "text".toUpperCase ()));
 			path.set ("assets/images/bad ending.png", "assets/images/bad ending.png");
 			type.set ("assets/images/bad ending.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/images/box_v2.png", "assets/images/box_v2.png");
+			type.set ("assets/images/box_v2.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/images/credits page.png", "assets/images/credits page.png");
 			type.set ("assets/images/credits page.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/images/Credits.png", "assets/images/Credits.png");

@@ -56,6 +56,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		super ();
 		
 		
+		Font.registerFont (__ASSET__assets_data_8_bit_wonder_ttf);
+		
 		
 		
 		
@@ -102,6 +104,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -566,11 +570,13 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+@:keep class __ASSET__assets_data_8_bit_wonder_ttf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/data/8-BIT WONDER.TTF"; fontName = "8BIT WONDER Nominal"; }}
 
 
 #else
 
 
+class __ASSET__assets_data_8_bit_wonder_ttf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/data/8-BIT WONDER.TTF"; fontName = "8BIT WONDER Nominal";  }}
 class __ASSET__flixel_fonts_nokiafc22_ttf extends openfl.text.Font { public function new () { super (); __fontPath = "flixel/fonts/nokiafc22.ttf"; fontName = "Nokia Cellphone FC Small";  }}
 class __ASSET__flixel_fonts_monsterrat_ttf extends openfl.text.Font { public function new () { super (); __fontPath = "flixel/fonts/monsterrat.ttf"; fontName = "Monsterrat";  }}
 
@@ -635,6 +641,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		#if (openfl && !flash)
 		
+		openfl.text.Font.registerFont (__ASSET__OPENFL__assets_data_8_bit_wonder_ttf);
+		
 		
 		
 		
@@ -681,10 +689,14 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		#if flash
 		
+		path.set ("assets/data/8-BIT WONDER.TTF", "assets/data/8-BIT WONDER.TTF");
+		type.set ("assets/data/8-BIT WONDER.TTF", AssetType.FONT);
 		path.set ("assets/data/data-goes-here.txt", "assets/data/data-goes-here.txt");
 		type.set ("assets/data/data-goes-here.txt", AssetType.TEXT);
 		path.set ("assets/images/bad ending.png", "assets/images/bad ending.png");
 		type.set ("assets/images/bad ending.png", AssetType.IMAGE);
+		path.set ("assets/images/box_v2.png", "assets/images/box_v2.png");
+		type.set ("assets/images/box_v2.png", AssetType.IMAGE);
 		path.set ("assets/images/credits page.png", "assets/images/credits page.png");
 		type.set ("assets/images/credits page.png", AssetType.IMAGE);
 		path.set ("assets/images/Credits.png", "assets/images/Credits.png");
@@ -768,10 +780,16 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#elseif html5
 		
 		var id;
+		id = "assets/data/8-BIT WONDER.TTF";
+		path.set (id, id);
+		type.set (id, AssetType.FONT);
 		id = "assets/data/data-goes-here.txt";
 		path.set (id, id);
 		type.set (id, AssetType.TEXT);
 		id = "assets/images/bad ending.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/box_v2.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "assets/images/credits page.png";
@@ -913,6 +931,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		
+		className.set ("assets/data/8-BIT WONDER.TTF", __ASSET__assets_data_8_bit_wonder_ttf);
+		type.set ("assets/data/8-BIT WONDER.TTF", AssetType.FONT);
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -1718,6 +1740,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
+
 @:keep @:bind #if display private #end class __ASSET__flixel_sounds_beep_ogg extends null { }
 @:keep @:bind #if display private #end class __ASSET__flixel_sounds_flixel_ogg extends null { }
 @:keep @:bind #if display private #end class __ASSET__flixel_fonts_nokiafc22_ttf extends null { }
@@ -1726,6 +1750,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 #elseif html5
+
+@:keep #if display private #end class __ASSET__assets_data_8_bit_wonder_ttf extends lime.text.Font { public function new () { super (); name = "8BIT WONDER Nominal"; } } 
 
 
 
@@ -1772,6 +1798,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 #else
 
+@:keep #if display private #end class __ASSET__assets_data_8_bit_wonder_ttf extends lime.text.Font { public function new () { __fontPath = #if ios "assets/" + #end "assets/data/8-BIT WONDER.TTF"; name = "8BIT WONDER Nominal"; super (); }}
 
 
 #if (windows || mac || linux || cpp)
@@ -1789,6 +1816,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 #end
 
 #if (openfl && !flash)
+@:keep #if display private #end class __ASSET__OPENFL__assets_data_8_bit_wonder_ttf extends openfl.text.Font { public function new () { __fontPath = #if ios "assets/" + #end "assets/data/8-BIT WONDER.TTF"; name = "8BIT WONDER Nominal"; super (); }}
 @:keep #if display private #end class __ASSET__OPENFL__flixel_fonts_nokiafc22_ttf extends openfl.text.Font { public function new () { var font = new __ASSET__flixel_fonts_nokiafc22_ttf (); src = font.src; name = font.name; super (); }}
 @:keep #if display private #end class __ASSET__OPENFL__flixel_fonts_monsterrat_ttf extends openfl.text.Font { public function new () { var font = new __ASSET__flixel_fonts_monsterrat_ttf (); src = font.src; name = font.name; super (); }}
 
