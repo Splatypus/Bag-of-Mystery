@@ -26,11 +26,16 @@ class NPC extends FlxSprite
 	/* Private Variables Area: */
 	
 	public var _dialogue:String;
-	public var _task:Array<String>;	//For stating the requirements
+	public var _good_choice:String;
+	public var _neutral_choice:String;
+	public var _evil_choice:String;
+	public var _optional_choice:String;
+	
 
 	private var _choice_good:Int;
 	private var _choice_neutral:Int;
 	private var _choice_evil:Int;
+	private var _choice_optional:Int;
 
 	private var _cleared:Bool;
 	private var _talking:Bool;
@@ -77,6 +82,8 @@ class NPC extends FlxSprite
 				_choice_neutral = val;
 			case 2:
 				_choice_evil = val;
+			case 3:
+				_choice_optional = val;
 		}
 	}
 
@@ -99,62 +106,21 @@ class NPC extends FlxSprite
 			case 2:
 				//evil choice
 				return _choice_evil;
+			case 3:
+				//optional choice
+				return _choice_optional;
 		}
+		_cleared = true;
 		return 0;
 	}
-
-
-	//face to the player when talking
-
-	//match morality values to choices
-
-	//
-	public function talk(): Void
-	{
-		//Create dialogue box before rendering text.
-		/*
-		var mytext:FlxText;
-		mytext = new FlxText(0, 0, 500);
-		mytext.text = "Hello World!"; 
-		mytext.setFormat("assets/data/8-bit wonder.ttf", 20, FlxColor.WHITE, LEFT);
-		mytext.setBorderStyle(OUTLINE, FlxColor.RED, 1);
-		add(mytext); 
-		*/
-
-		if(_cleared)
-		{
-			//show _dialogue_cleared text. Show words by words if possible. 
-
-		}
-		else
-		{
-			//show _dialogue text
-
-			//show task text
-
-			//give choices
-			//Tasks:
-			/*
-				parse the dialogue and pass to _text
-
-				Let the text and box follow camera
-
-				detect the player position
-
-				let player make choice
-
-				Step arrangement.
-
-			*/
-		}
-
-
-	}
+	
+	/*
 
 	public function getText(): String
 	{
 		return "Hello World!\n";
 	}
+	*/
 
 
 }
