@@ -120,15 +120,19 @@ class PlayState extends FlxState
 		
 		c1 = new FlxText(_player.x - 220, _player.y - 250, 500);
 		c1.setFormat("assets/data/munro.ttf", 15, FlxColor.WHITE, CENTER);
+		c1.setBorderStyle(OUTLINE, FlxColor.BLACK, 1);
 		c1.moves = true;
 		c2 = new FlxText(_player.x - 220, _player.y - 210, 500);
 		c2.setFormat("assets/data/munro.ttf", 15, FlxColor.WHITE, CENTER);
+		c2.setBorderStyle(OUTLINE, FlxColor.BLACK, 1);
 		c2.moves = true;
 		c3 = new FlxText(_player.x - 220, _player.y - 170, 500);
 		c3.setFormat("assets/data/munro.ttf", 15, FlxColor.WHITE, CENTER);
+		c3.setBorderStyle(OUTLINE, FlxColor.BLACK, 1);
 		c3.moves = true;
 		c4 = new FlxText(_player.x - 220, _player.y - 130, 500);
 		c4.setFormat("assets/data/munro.ttf", 15, FlxColor.WHITE, CENTER);
+		c4.setBorderStyle(OUTLINE, FlxColor.BLACK, 1);
 		c4.moves = true;
 		
 		_npc_1 = new NPC(1825, 630, 30, 70, _player);
