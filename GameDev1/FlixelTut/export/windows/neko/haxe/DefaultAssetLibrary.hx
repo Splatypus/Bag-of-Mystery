@@ -76,6 +76,24 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		Font.registerFont (__ASSET__flixel_fonts_nokiafc22_ttf);
 		Font.registerFont (__ASSET__flixel_fonts_monsterrat_ttf);
 		
@@ -84,6 +102,24 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -619,6 +655,24 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_nokiafc22_ttf);
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_monsterrat_ttf);
 		
@@ -631,16 +685,50 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/data/data-goes-here.txt", AssetType.TEXT);
 		path.set ("assets/images/bad ending.png", "assets/images/bad ending.png");
 		type.set ("assets/images/bad ending.png", AssetType.IMAGE);
+		path.set ("assets/images/credits page.png", "assets/images/credits page.png");
+		type.set ("assets/images/credits page.png", AssetType.IMAGE);
+		path.set ("assets/images/Credits.png", "assets/images/Credits.png");
+		type.set ("assets/images/Credits.png", AssetType.IMAGE);
 		path.set ("assets/images/duck.png", "assets/images/duck.png");
 		type.set ("assets/images/duck.png", AssetType.IMAGE);
-		path.set ("assets/images/good ending v2.png", "assets/images/good ending v2.png");
-		type.set ("assets/images/good ending v2.png", AssetType.IMAGE);
+		path.set ("assets/images/giraffe house.png", "assets/images/giraffe house.png");
+		type.set ("assets/images/giraffe house.png", AssetType.IMAGE);
+		path.set ("assets/images/good ending.png", "assets/images/good ending.png");
+		type.set ("assets/images/good ending.png", AssetType.IMAGE);
+		path.set ("assets/images/house.png", "assets/images/house.png");
+		type.set ("assets/images/house.png", AssetType.IMAGE);
+		path.set ("assets/images/HowToPlay.png", "assets/images/HowToPlay.png");
+		type.set ("assets/images/HowToPlay.png", AssetType.IMAGE);
 		path.set ("assets/images/images-go-here.txt", "assets/images/images-go-here.txt");
 		type.set ("assets/images/images-go-here.txt", AssetType.TEXT);
+		path.set ("assets/images/instruction screen.png", "assets/images/instruction screen.png");
+		type.set ("assets/images/instruction screen.png", AssetType.IMAGE);
 		path.set ("assets/images/map.png", "assets/images/map.png");
 		type.set ("assets/images/map.png", AssetType.IMAGE);
-		path.set ("assets/images/neutral ending v1.png", "assets/images/neutral ending v1.png");
-		type.set ("assets/images/neutral ending v1.png", AssetType.IMAGE);
+		path.set ("assets/images/neutral ending.png", "assets/images/neutral ending.png");
+		type.set ("assets/images/neutral ending.png", AssetType.IMAGE);
+		path.set ("assets/images/npc 1.png", "assets/images/npc 1.png");
+		type.set ("assets/images/npc 1.png", AssetType.IMAGE);
+		path.set ("assets/images/npc 10.png", "assets/images/npc 10.png");
+		type.set ("assets/images/npc 10.png", AssetType.IMAGE);
+		path.set ("assets/images/npc 2.png", "assets/images/npc 2.png");
+		type.set ("assets/images/npc 2.png", AssetType.IMAGE);
+		path.set ("assets/images/npc 3.png", "assets/images/npc 3.png");
+		type.set ("assets/images/npc 3.png", AssetType.IMAGE);
+		path.set ("assets/images/npc 4.png", "assets/images/npc 4.png");
+		type.set ("assets/images/npc 4.png", AssetType.IMAGE);
+		path.set ("assets/images/npc 5.png", "assets/images/npc 5.png");
+		type.set ("assets/images/npc 5.png", AssetType.IMAGE);
+		path.set ("assets/images/npc 6.png", "assets/images/npc 6.png");
+		type.set ("assets/images/npc 6.png", AssetType.IMAGE);
+		path.set ("assets/images/npc 7.png", "assets/images/npc 7.png");
+		type.set ("assets/images/npc 7.png", AssetType.IMAGE);
+		path.set ("assets/images/npc 8.png", "assets/images/npc 8.png");
+		type.set ("assets/images/npc 8.png", AssetType.IMAGE);
+		path.set ("assets/images/npc 9.png", "assets/images/npc 9.png");
+		type.set ("assets/images/npc 9.png", AssetType.IMAGE);
+		path.set ("assets/images/Play.png", "assets/images/Play.png");
+		type.set ("assets/images/Play.png", AssetType.IMAGE);
 		path.set ("assets/images/rat back sheet.png", "assets/images/rat back sheet.png");
 		type.set ("assets/images/rat back sheet.png", AssetType.IMAGE);
 		path.set ("assets/images/rat front sheet.png", "assets/images/rat front sheet.png");
@@ -651,6 +739,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/images/rat side sheet.png", AssetType.IMAGE);
 		path.set ("assets/images/titlecard.png", "assets/images/titlecard.png");
 		type.set ("assets/images/titlecard.png", AssetType.IMAGE);
+		path.set ("assets/images/woodpecker house.png", "assets/images/woodpecker house.png");
+		type.set ("assets/images/woodpecker house.png", AssetType.IMAGE);
 		path.set ("assets/music/music-goes-here.txt", "assets/music/music-goes-here.txt");
 		type.set ("assets/music/music-goes-here.txt", AssetType.TEXT);
 		path.set ("assets/music/Music.wav", "assets/music/Music.wav");
@@ -684,19 +774,70 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "assets/images/bad ending.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
+		id = "assets/images/credits page.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/Credits.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
 		id = "assets/images/duck.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
-		id = "assets/images/good ending v2.png";
+		id = "assets/images/giraffe house.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/good ending.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/house.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/HowToPlay.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "assets/images/images-go-here.txt";
 		path.set (id, id);
 		type.set (id, AssetType.TEXT);
+		id = "assets/images/instruction screen.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
 		id = "assets/images/map.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
-		id = "assets/images/neutral ending v1.png";
+		id = "assets/images/neutral ending.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/npc 1.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/npc 10.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/npc 2.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/npc 3.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/npc 4.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/npc 5.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/npc 6.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/npc 7.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/npc 8.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/npc 9.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/Play.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "assets/images/rat back sheet.png";
@@ -712,6 +853,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "assets/images/titlecard.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/woodpecker house.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "assets/music/music-goes-here.txt";
@@ -769,6 +913,24 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -1538,6 +1700,24 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @:keep @:bind #if display private #end class __ASSET__flixel_sounds_beep_ogg extends null { }
 @:keep @:bind #if display private #end class __ASSET__flixel_sounds_flixel_ogg extends null { }
 @:keep @:bind #if display private #end class __ASSET__flixel_fonts_nokiafc22_ttf extends null { }
@@ -1546,6 +1726,24 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 #elseif html5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
