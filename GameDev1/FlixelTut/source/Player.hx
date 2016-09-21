@@ -13,8 +13,8 @@
 
 	 //your morality 0-100. <33 is evil, >33 and <66 is neutral, >66 is good.
 	 var morality:Int = 50;
-	 var canMove:Bool = true;
-	 var startCS:Bool = false;
+	 public var canMove:Bool = true;
+	 public var startCS:Bool = false;
 
 	 var speed:Float = 200;
 	 var _rot: Float = 0;

@@ -99,18 +99,22 @@ class NPC extends FlxSprite
 		{
 			case 0:
 				//good choice
+				_cleared = true;
 				return _choice_good;
 			case 1:
 				//neutral choice
+				_cleared = true;
 				return _choice_neutral;
 			case 2:
 				//evil choice
+				_cleared = true;
 				return _choice_evil;
 			case 3:
 				//optional choice
+				_cleared = true;
 				return _choice_optional;
 		}
-		_cleared = true;
+		
 		return 0;
 	}
 	

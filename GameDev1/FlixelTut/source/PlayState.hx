@@ -47,6 +47,7 @@ class PlayState extends FlxState
 	var c2:FlxText;
 	var c3:FlxText;
 	var c4:FlxText;
+	var counter:Int;
 	
 	
 	override public function create():Void
@@ -111,7 +112,7 @@ class PlayState extends FlxState
 		
 
 		/* NPC Creation and setting Section */
-		
+		counter = 0;
 		_shown = false;
 		_text = new FlxText(_player.x - 220, _player.y + 160, 500);
 		_text.moves = true;
@@ -150,7 +151,7 @@ class PlayState extends FlxState
 
 		_npc_2 = new NPC(1023, 500, 30, 70, _player);
 		_npc_2.immovable = true;
-		_npc_2 = new NPC(130, 120, 30, 70, _player);
+		_npc_2._dialogue = "“My shop is going to go out of business if I can’t stop thieves from breaking in!”";
 		_npc_2.set_sprite_path("assets/images/npc 2.png");
 		_npc_2.load_sprite();
 		
@@ -334,6 +335,25 @@ class PlayState extends FlxState
 	
 	override public function update(elapsed:Float):Void
 	{
+		if (counter >= 9)
+		{
+			if (_player.getMorality() >= 66)
+			{
+				//load good ending;
+				FlxG.switchState(new GoodEnd());
+			}
+			else if (_player.getMorality() >= 33)
+			{
+				//load neutral ending
+				FlxG.switchState(new NeutralEnd());
+			}
+			else
+			{
+				//load bad ending
+				FlxG.switchState(new BadEnd());
+			}
+		}
+		
 		FlxG.collide(_player, stuff);
 		FlxG.collide(_player, _npc_1);
 		FlxG.collide(_player, _npc_2);
@@ -367,9 +387,9 @@ class PlayState extends FlxState
 		//Assign proper dialogue and choices. press number keys to make choice
 		if (range(_player, _npc_1))
 		{
+			_text.text = _npc_1._dialogue;
 			if (!_npc_1.status())
 			{
-				_text.text = _npc_1._dialogue;
 				c1.text = _npc_1._good_choice;
 				c2.text = _npc_1._neutral_choice;
 				c3.text = _npc_1._evil_choice;
@@ -377,23 +397,26 @@ class PlayState extends FlxState
 				if (FlxG.keys.justPressed.ONE)
 				{
 					_player.changeMorality(_npc_1.make_choice(0));
+					counter++;
 				}
 				if (FlxG.keys.justPressed.TWO)
 				{
 					_player.changeMorality(_npc_1.make_choice(1));
+					counter++;
 				}
 				if (FlxG.keys.justPressed.THREE)
 				{
 					_player.changeMorality(_npc_1.make_choice(2));
+					counter++;
 				}
 				if (FlxG.keys.justPressed.FOUR)
 				{
 					_player.changeMorality(_npc_1.make_choice(3));
+					counter++;
 				}
 			}
 			else
 			{
-				_text.text = _info;
 				c1.text = "";
 				c2.text = "";
 				c3.text = "";
@@ -402,9 +425,9 @@ class PlayState extends FlxState
 		}
 		else if (range(_player, _npc_2))
 		{
+			_text.text = _npc_2._dialogue;
 			if (!_npc_2.status())
 			{
-				_text.text = _npc_2._dialogue;
 				c1.text = _npc_2._good_choice;
 				c2.text = _npc_2._neutral_choice;
 				c3.text = _npc_2._evil_choice;
@@ -412,23 +435,26 @@ class PlayState extends FlxState
 				if (FlxG.keys.justPressed.ONE)
 				{
 					_player.changeMorality(_npc_2.make_choice(0));
+					counter++;
 				}
 				if (FlxG.keys.justPressed.TWO)
 				{
 					_player.changeMorality(_npc_2.make_choice(1));
+					counter++;
 				}
 				if (FlxG.keys.justPressed.THREE)
 				{
 					_player.changeMorality(_npc_2.make_choice(2));
+					counter++;
 				}
 				if (FlxG.keys.justPressed.FOUR)
 				{
 					_player.changeMorality(_npc_2.make_choice(3));
+					counter++;
 				}
 			}
 			else
 			{
-				_text.text = _info;
 				c1.text = "";
 				c2.text = "";
 				c3.text = "";
@@ -437,32 +463,31 @@ class PlayState extends FlxState
 		}
 		else if (range(_player, _npc_3))
 		{
+			_text.text = _npc_3._dialogue;
 			if (!_npc_3.status())
 			{
-				_text.text = _npc_3._dialogue;
 				c1.text = _npc_3._good_choice;
 				c2.text = _npc_3._neutral_choice;
 				c3.text = _npc_3._evil_choice;
+				c4.text = "";
 				if (FlxG.keys.justPressed.ONE)
 				{
 					_player.changeMorality(_npc_3.make_choice(0));
-					remove(c1);
-					remove(c2);
-					remove(c3);
-					remove(c4);
+					counter++;
 				}
 				if (FlxG.keys.justPressed.TWO)
 				{
 					_player.changeMorality(_npc_3.make_choice(1));
+					counter++;
 				}
 				if (FlxG.keys.justPressed.THREE)
 				{
 					_player.changeMorality(_npc_3.make_choice(2));
+					counter++;
 				}
 			}
 			else
 			{
-				_text.text = _info;
 				c1.text = "";
 				c2.text = "";
 				c3.text = "";
@@ -472,28 +497,31 @@ class PlayState extends FlxState
 		else if (range(_player, _npc_4))
 		{
 			
+			_text.text = _npc_4._dialogue;
 			if (!_npc_4.status())
 			{
-				_text.text = _npc_4._dialogue;
 				c1.text = _npc_4._good_choice;
 				c2.text = _npc_4._neutral_choice;
 				c3.text = _npc_4._evil_choice;
+				c4.text = "";
 				if (FlxG.keys.justPressed.ONE)
 				{
 					_player.changeMorality(_npc_4.make_choice(0));
+					counter++;
 				}
 				if (FlxG.keys.justPressed.TWO)
 				{
 					_player.changeMorality(_npc_4.make_choice(1));
+					counter++;
 				}
 				if (FlxG.keys.justPressed.THREE)
 				{
 					_player.changeMorality(_npc_4.make_choice(2));
+					counter++;
 				}
 			}
 			else
 			{
-				_text.text = _info;
 				
 				c1.text = "";
 				c2.text = "";
@@ -503,10 +531,10 @@ class PlayState extends FlxState
 		}
 		else if (range(_player, _npc_5))
 		{
+			_text.text = _npc_5._dialogue;
 			
 			if (!_npc_5.status())
 			{
-				_text.text = _npc_5._dialogue;
 				c1.text = _npc_5._good_choice;
 				c2.text = _npc_5._neutral_choice;
 				c3.text = _npc_5._evil_choice;
@@ -514,24 +542,26 @@ class PlayState extends FlxState
 				if (FlxG.keys.justPressed.ONE)
 				{
 					_player.changeMorality(_npc_5.make_choice(0));
+					counter++;
 				}
 				if (FlxG.keys.justPressed.TWO)
 				{
 					_player.changeMorality(_npc_5.make_choice(1));
+					counter++;
 				}
 				if (FlxG.keys.justPressed.THREE)
 				{
 					_player.changeMorality(_npc_5.make_choice(2));
+					counter++;
 				}
 				if (FlxG.keys.justPressed.FOUR)
 				{
 					_player.changeMorality(_npc_5.make_choice(3));
+					counter++;
 				}
 			}
 			else
 			{
-				_text.text = _info;
-				
 				c1.text = "";
 				c2.text = "";
 				c3.text = "";
@@ -541,9 +571,9 @@ class PlayState extends FlxState
 		else if (range(_player, _npc_6))
 		{
 			
+			_text.text = _npc_6._dialogue;
 			if (!_npc_6.status())
 			{
-				_text.text = _npc_6._dialogue;
 				c1.text = _npc_6._good_choice;
 				c2.text = _npc_6._neutral_choice;
 				c3.text = _npc_6._evil_choice;
@@ -551,23 +581,26 @@ class PlayState extends FlxState
 				if (FlxG.keys.justPressed.ONE)
 				{
 					_player.changeMorality(_npc_6.make_choice(0));
+					counter++;
 				}
 				if (FlxG.keys.justPressed.TWO)
 				{
 					_player.changeMorality(_npc_6.make_choice(1));
+					counter++;
 				}
 				if (FlxG.keys.justPressed.THREE)
 				{
 					_player.changeMorality(_npc_6.make_choice(2));
+					counter++;
 				}
 				if (FlxG.keys.justPressed.FOUR)
 				{
 					_player.changeMorality(_npc_6.make_choice(3));
+					counter++;
 				}
 			}
 			else
 			{
-				_text.text = _info;
 				
 				c1.text = "";
 				c2.text = "";
@@ -577,29 +610,32 @@ class PlayState extends FlxState
 		}
 		else if (range(_player, _npc_7))
 		{
+			_text.text = _npc_7._dialogue;
 			
 			if (!_npc_7.status())
 			{
-				_text.text = _npc_7._dialogue;
 				c1.text = _npc_7._good_choice;
 				c2.text = _npc_7._neutral_choice;
 				c3.text = _npc_7._evil_choice;
+				c4.text = "";
 				if (FlxG.keys.justPressed.ONE)
 				{
 					_player.changeMorality(_npc_7.make_choice(0));
+					counter++;
 				}
 				if (FlxG.keys.justPressed.TWO)
 				{
 					_player.changeMorality(_npc_7.make_choice(1));
+					counter++;
 				}
 				if (FlxG.keys.justPressed.THREE)
 				{
 					_player.changeMorality(_npc_7.make_choice(2));
+					counter++;
 				}
 			}
 			else
 			{
-				_text.text = _info;
 				
 				c1.text = "";
 				c2.text = "";
@@ -609,10 +645,10 @@ class PlayState extends FlxState
 		}
 		else if (range(_player, _npc_8))
 		{
+			_text.text = _npc_8._dialogue;
 			
 			if (!_npc_8.status())
 			{
-				_text.text = _npc_8._dialogue;
 				c1.text = _npc_8._good_choice;
 				c2.text = _npc_8._neutral_choice;
 				c3.text = _npc_8._evil_choice;
@@ -620,23 +656,26 @@ class PlayState extends FlxState
 				if (FlxG.keys.justPressed.ONE)
 				{
 					_player.changeMorality(_npc_8.make_choice(0));
+					counter++;
 				}
 				if (FlxG.keys.justPressed.TWO)
 				{
 					_player.changeMorality(_npc_8.make_choice(1));
+					counter++;
 				}
 				if (FlxG.keys.justPressed.THREE)
 				{
 					_player.changeMorality(_npc_8.make_choice(2));
+					counter++;
 				}
 				if (FlxG.keys.justPressed.FOUR)
 				{
 					_player.changeMorality(_npc_8.make_choice(3));
+					counter++;
 				}
 			}
 			else
 			{
-				_text.text = _info;
 				
 				c1.text = "";
 				c2.text = "";
@@ -646,9 +685,9 @@ class PlayState extends FlxState
 		}
 		else if (range(_player, _npc_9))
 		{
+			_text.text = _npc_9._dialogue;
 			if (!_npc_9.status())
 			{
-				_text.text = _npc_9._dialogue;
 				c1.text = _npc_9._good_choice;
 				c2.text = _npc_9._neutral_choice;
 				c3.text = _npc_9._evil_choice;
@@ -656,23 +695,26 @@ class PlayState extends FlxState
 				if (FlxG.keys.justPressed.ONE)
 				{
 					_player.changeMorality(_npc_9.make_choice(0));
+					counter++;
 				}
 				if (FlxG.keys.justPressed.TWO)
 				{
 					_player.changeMorality(_npc_9.make_choice(1));
+					counter++;
 				}
 				if (FlxG.keys.justPressed.THREE)
 				{
 					_player.changeMorality(_npc_9.make_choice(2));
+					counter++;
 				}
 				if (FlxG.keys.justPressed.FOUR)
 				{
 					_player.changeMorality(_npc_9.make_choice(3));
+					counter++;
 				}
 			}
 			else
 			{
-				_text.text = _info;
 				c1.text = "";
 				c2.text = "";
 				c3.text = "";
@@ -690,8 +732,10 @@ class PlayState extends FlxState
 		
 		if (_shown)
 		{
+			_player.canMove = false;
 			add(_box);
 			add(_text);
+			
 			if (_text.text != _info)
 			{
 				//show choices
@@ -700,9 +744,17 @@ class PlayState extends FlxState
 				add(c3);
 				add(c4);
 			}
+			else
+			{
+				c1.text = "";
+				c2.text = "";
+				c3.text = "";
+				c4.text = "";
+			}
 		}
 		else
 		{
+			_player.canMove = true;
 			remove(_box);
 			remove(_text);
 			remove(c1);
