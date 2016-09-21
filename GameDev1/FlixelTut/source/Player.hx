@@ -14,6 +14,7 @@
 	 //your morality 0-100. <33 is evil, >33 and <66 is neutral, >66 is good.
 	 var morality:Int = 50;
 	 var canMove:Bool = true;
+	 var startCS:Bool = false;
 
 	 var speed:Float = 200;
 	 var _rot: Float = 0;
@@ -50,6 +51,11 @@
 	 {
 		 if(canMove == true){ //this will be set false when talking to someone, or during cutscenes etc
 		 	movement();
+		 } else if (startCS == true){
+			animation.play("up");
+			velocity.set(speed,0);
+			velocity.rotate(new FlxPoint(0,0), 270);
+			//check collision with first NPC, if so automatically start dialog and set startCS to false
 		 }
 		 //if overlapped with an interaction zone, check if Space is pressed and then interact
 		 //use if(overlaps(object, false) && FlxG.keys.anyPressed([F, SPACEBAR])){run interact script } might be SPACE or SPACEBAR. 
