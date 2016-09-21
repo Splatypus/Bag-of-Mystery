@@ -47,6 +47,11 @@
 		 drag.x = drag.y = 1600;
      }
 	 
+	 public function getRot(): Float
+	 {
+		 return _rot;
+	 }
+	 
 	 override public function update(elapsed:Float):Void
 	 {
 		 if(canMove == true){ //this will be set false when talking to someone, or during cutscenes etc

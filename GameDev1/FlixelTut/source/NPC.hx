@@ -1,40 +1,32 @@
 package;
 
 import flixel.text.FlxText;
+import flixel.util.FlxColor;
 import flixel.FlxObject;
 import flixel.FlxG;
 import flixel.FlxSprite;
-import flixel.system.FlxAssets.FlxGraphicAsset;
-import flixel.util.FlxColor;
+
 
 /*
 	This npc class stores:
 
-		*name of the NPC
-		*choices for the player
-		*values of choices
-		*dialogue text
-		*sprite of the NPC
+		* name of the NPC (if applicable)
+		* choices for the player
+		* values of choices
+		* dialogue text
+		* sprite path of the NPC
 	
-	Instantiate the class to create an NPC in the environment;
-
+	Instantiate in <PlayState> to create an NPC in the map;
 */
 
 
 class NPC extends FlxSprite
 {
 	
-	//Private Variables Area:
-
-	//preset choices
-	//value for choices
-	//preset text for dialogue
-	//Name of the NPC
-	//Bool: Task completed
+	/* Private Variables Area: */
 	
-	private var _dialogue:Array<String>;
-	private var _dialogue_cleared:Array<String>;
-	private var _task:Array<String>;	//For stating the requirements
+	public var _dialogue:String;
+	public var _task:Array<String>;	//For stating the requirements
 
 	private var _choice_good:Int;
 	private var _choice_neutral:Int;
@@ -46,18 +38,20 @@ class NPC extends FlxSprite
 	private var sprite_path:String;
 	private var sprite_width:Int;
 	private var sprite_height:Int;
+	private var _player:Player;
 
-	var rot:Float = 0;
+	/* End of private variables area */
 
 	//Constructor
-	public function new(?X:Float=0, ?Y:Float=0, W:Int, H:Int)
+	public function new(?X:Float=0, ?Y:Float=0, W:Int, H:Int, player:Player)
 	{
 		super(X, Y);
+		_player = player;
+
 		_cleared = false;
 		_talking = false;
 		sprite_width = W;
 		sprite_height = H;
-
 	}
 
 	public function set_sprite_path(p:String):Void
@@ -86,6 +80,7 @@ class NPC extends FlxSprite
 		}
 	}
 
+	/* Use this method to check if the task is completed */
 	public function status(): Bool
 	{
 		return _cleared;
@@ -111,11 +106,21 @@ class NPC extends FlxSprite
 
 	//face to the player when talking
 
-	//match choice value to choices
+	//match morality values to choices
 
 	//
-	public function talking(): Void
+	public function talk(): Void
 	{
+		//Create dialogue box before rendering text.
+		/*
+		var mytext:FlxText;
+		mytext = new FlxText(0, 0, 500);
+		mytext.text = "Hello World!"; 
+		mytext.setFormat("assets/data/8-bit wonder.ttf", 20, FlxColor.WHITE, LEFT);
+		mytext.setBorderStyle(OUTLINE, FlxColor.RED, 1);
+		add(mytext); 
+		*/
+
 		if(_cleared)
 		{
 			//show _dialogue_cleared text. Show words by words if possible. 
@@ -128,8 +133,27 @@ class NPC extends FlxSprite
 			//show task text
 
 			//give choices
+			//Tasks:
+			/*
+				parse the dialogue and pass to _text
+
+				Let the text and box follow camera
+
+				detect the player position
+
+				let player make choice
+
+				Step arrangement.
+
+			*/
 		}
 
+
+	}
+
+	public function getText(): String
+	{
+		return "Hello World!\n";
 	}
 
 
