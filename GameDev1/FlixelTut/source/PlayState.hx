@@ -116,19 +116,19 @@ class PlayState extends FlxState
 		_shown = false;
 		_text = new FlxText(_player.x - 220, _player.y + 160, 500);
 		_text.moves = true;
-		_text.setFormat("assets/data/8-BIT WONDER.TTF", 20, FlxColor.WHITE, CENTER);
+		_text.setFormat("assets/data/munro.ttf", 20, FlxColor.WHITE, CENTER);
 		
 		c1 = new FlxText(_player.x - 220, _player.y - 250, 500);
-		c1.setFormat("assets/data/8-BIT WONDER.TTF", 15, FlxColor.WHITE, CENTER);
+		c1.setFormat("assets/data/munro.ttf", 15, FlxColor.WHITE, CENTER);
 		c1.moves = true;
 		c2 = new FlxText(_player.x - 220, _player.y - 210, 500);
-		c2.setFormat("assets/data/8-BIT WONDER.TTF", 15, FlxColor.WHITE, CENTER);
+		c2.setFormat("assets/data/munro.ttf", 15, FlxColor.WHITE, CENTER);
 		c2.moves = true;
 		c3 = new FlxText(_player.x - 220, _player.y - 170, 500);
-		c3.setFormat("assets/data/8-BIT WONDER.TTF", 15, FlxColor.WHITE, CENTER);
+		c3.setFormat("assets/data/munro.ttf", 15, FlxColor.WHITE, CENTER);
 		c3.moves = true;
 		c4 = new FlxText(_player.x - 220, _player.y - 130, 500);
-		c4.setFormat("assets/data/8-BIT WONDER.TTF", 15, FlxColor.WHITE, CENTER);
+		c4.setFormat("assets/data/munro.ttf", 15, FlxColor.WHITE, CENTER);
 		c4.moves = true;
 		
 		_npc_1 = new NPC(1825, 630, 30, 70, _player);
@@ -142,10 +142,10 @@ class PlayState extends FlxState
 		_npc_1._evil_choice = "Cactus - \"I've got this? Good luck.\" ";
 		_npc_1._optional_choice = "Coffee - \"This is all I've got.\" ";
 		
-		_npc_1.set_value(0, 3);
-		_npc_1.set_value(1, -3);
-		_npc_1.set_value(2, 2);
-		_npc_1.set_value(3, 1);
+		_npc_1.set_value(0, 15);
+		_npc_1.set_value(1, -15);
+		_npc_1.set_value(2, 10);
+		_npc_1.set_value(3, 5);
 		
 		add(_npc_1);
 
@@ -160,10 +160,10 @@ class PlayState extends FlxState
 		_npc_2._evil_choice = "Baseball Bat - “Hope you have a good swing.”";
 		_npc_2._optional_choice = "Keep Out Sign - “Maybe this’ll work?” ";
 		
-		_npc_2.set_value(0, 2);
-		_npc_2.set_value(1, 3);
-		_npc_2.set_value(2, -1);
-		_npc_2.set_value(3, -1);
+		_npc_2.set_value(0, 10);
+		_npc_2.set_value(1, 15);
+		_npc_2.set_value(2, -5);
+		_npc_2.set_value(3, -5);
 		
 		add(_npc_2);
 
@@ -178,9 +178,9 @@ class PlayState extends FlxState
 		_npc_3._evil_choice = "Jar of Bees - “Catch!” ";
 		_npc_3._optional_choice = "";
 		
-		_npc_3.set_value(0, 3);
-		_npc_3.set_value(1, 1);
-		_npc_3.set_value(2, -3);
+		_npc_3.set_value(0, 15);
+		_npc_3.set_value(1, 5);
+		_npc_3.set_value(2, -15);
 		_npc_3.set_value(3, 0);
 		
 		add(_npc_3);
@@ -196,9 +196,9 @@ class PlayState extends FlxState
 		_npc_4._evil_choice = "Meditate - “Have you tried meditating? Guided meditation might make your headache go away.”  ";
 		_npc_4._optional_choice = "";
 		
-		_npc_4.set_value(0, -3);
-		_npc_4.set_value(1, 3);
-		_npc_4.set_value(2, 2);
+		_npc_4.set_value(0, -15);
+		_npc_4.set_value(1, 15);
+		_npc_4.set_value(2, 10);
 		_npc_4.set_value(3, 0);
 		
 		add(_npc_4);
@@ -214,10 +214,10 @@ class PlayState extends FlxState
 		_npc_5._evil_choice = "Cake - “Everyone loves cake.” ";
 		_npc_5._optional_choice = "#1 Mug - “What dad wouldn’t love this?”";
 		
-		_npc_5.set_value(0, 1);
-		_npc_5.set_value(1, -2);
-		_npc_5.set_value(2, 2);
-		_npc_5.set_value(3, 1);
+		_npc_5.set_value(0, 5);
+		_npc_5.set_value(1, -10);
+		_npc_5.set_value(2, 10);
+		_npc_5.set_value(3, 5);
 		
 		add(_npc_5);
 
@@ -232,10 +232,10 @@ class PlayState extends FlxState
 		_npc_6._evil_choice = "Rock - “If you hit anything hard enough with this, it’s like a hammer.”";
 		_npc_6._optional_choice = "Jackhammer - “This is used in construction, right?” ";
 		
-		_npc_6.set_value(0, 1);
-		_npc_6.set_value(1, 2);
-		_npc_6.set_value(2, 2);
-		_npc_6.set_value(3, -2);
+		_npc_6.set_value(0, 5);
+		_npc_6.set_value(1, 10);
+		_npc_6.set_value(2, 10);
+		_npc_6.set_value(3, -10);
 		
 		add(_npc_6);
 
@@ -250,9 +250,9 @@ class PlayState extends FlxState
 		_npc_7._evil_choice = "Gem - “Here, give him this and see if he could start a new hobby.”  ";
 		_npc_7._optional_choice = "";
 		
-		_npc_7.set_value(0, 1);
-		_npc_7.set_value(1, -3);
-		_npc_7.set_value(2, 2);
+		_npc_7.set_value(0, 5);
+		_npc_7.set_value(1, -15);
+		_npc_7.set_value(2, 10);
 		_npc_7.set_value(3, 0);
 		
 		add(_npc_7);
@@ -268,10 +268,10 @@ class PlayState extends FlxState
 		_npc_8._evil_choice = "A Bible - “It’s never too late to learn about our Lord and savior Jesus Christ.” ";
 		_npc_8._optional_choice = "Bike - “Here’s a new bike!”";
 		
-		_npc_8.set_value(0, 1);
-		_npc_8.set_value(1, -3);
-		_npc_8.set_value(2, 2);
-		_npc_8.set_value(3, 3);
+		_npc_8.set_value(0, 5);
+		_npc_8.set_value(1, -15);
+		_npc_8.set_value(2, 10);
+		_npc_8.set_value(3, 15);
 		
 		add(_npc_8);
 
@@ -286,10 +286,10 @@ class PlayState extends FlxState
 		_npc_9._evil_choice = "Reject - “I won’t help you hurt your grandfather.”";
 		_npc_9._optional_choice = "Voice Recorder - “I could report this conversation to the authorities.”";
 		
-		_npc_9.set_value(0, -3);
-		_npc_9.set_value(1, -3);
-		_npc_9.set_value(2, 2);
-		_npc_9.set_value(3, 2);
+		_npc_9.set_value(0, -15);
+		_npc_9.set_value(1, -15);
+		_npc_9.set_value(2, 10);
+		_npc_9.set_value(3, 10);
 		
 		add(_npc_9);
 
@@ -304,6 +304,8 @@ class PlayState extends FlxState
 		_box.loadGraphic("assets/images/box_v2.png", false);
 		_info = "UP/W, DOWN/S, LEFT/A, RIGHT/D, talk:SPACE";
 
+		//_player.startCS = true;
+		
 		super.create();
 	}
 	
@@ -724,6 +726,15 @@ class PlayState extends FlxState
 		else if (range(_player, _npc_mayor))
 		{
 			_text.text = _npc_mayor._dialogue;
+			/*
+			if (_player.startCS)
+			{
+				if (FlxG.keys.justPressed.SPACE)
+				{
+					_player.startCS = false;
+				}
+			}
+			*/
 		}
 		else
 		{
